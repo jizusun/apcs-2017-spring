@@ -90,20 +90,19 @@ typora-copy-images-to: ..\images
 
 #### Access specifier
 
-*  Public
+*  ``public``
    * Public class is usable by all client programs. If not, only be used by class in its own package.
    * Public methods are accessible to all clientprogram.
 
-*  Private
+*  ``private``
 
    * Private variables can be accessonly by methods of that class.
 
-*  Static
+*  ``static`` **THINK TWICE ABOUT THIS CONCEPT**
 
    * A static variable contains a value that is shared by all instances of the class.
 
-
-* Memory allocation happens once.
+   * Memory allocation happens once.
 
 #### Information hiding
 
@@ -123,11 +122,17 @@ However, client are not privy to the class implementation and access the private
 #### Type of methods
 
 * Constructors
-  * Create an object of the class. The same name asthe class and no return type.
-  * New operator returns the address of newly constructed object. 
-  * eg: 
+  * How to identify: 
+    * The same name as the class, and no return type.
+    * ``default constructor`` has no parameters: provides reasonable initial/default values for an object
+    * ``the constructor with parameters``:  sets the instance variables of an object to the values of those parameters  
+  * Functionality: 
+    * *Implicitly** called when **creating an object(instance) of /instantiating/initializing**  a  class. 
+    * ``new `` operator returns the address  in memory of the newly constructed object. (p.102)
+  * Example:  
     * ``BankAccount b = newBankAccount()``
     * ``b`` stores the address of ``BankAccount`` object. Not the object itself.
+  * ``image preferred``
 * ACCESSORS
 
 Access a class object withoutaltering the object. Return some information about object
@@ -138,11 +143,7 @@ Access a class object withoutaltering the object. Return some information about 
 
    Dot operator b.withdraw();
 
-
-
-
-
-Static methods vs instance methods
+### Static methods vs instance methods
 
 1.        When the class is loaded member variable isinitialized, associated with the class.
 
@@ -156,9 +157,8 @@ A static variable separately divided a storage space, thestorage space is shared
 
 5.        Recall instance method, object.methodname()
 
-Recall static methods, classname.methodname();
-
-Static methods in a driver class
+* Call static methods: ``ClassName.staticMethodName();``
+* Static methods in a driver class
 
    A class contains main() is used to test otherclass.
 
@@ -210,44 +210,31 @@ Two references for the sameobject.
 
 Use new to create a second object
 
-ü  The nullreference
+### The nullreference
 
-An uninitialized object variable 
+* An uninitialized object variable 
+* Test: ``BankAccount b; If(b==null) ``
+* failed to initialize 
+  * local variable: compile-time error
+  * instance variable
+    * primitive type: provide reasonable default values ( 0 for numbers, false for booleans)
+    * ref. type: set to null
+* NullpointerException
 
-Test:BankAccount b; If(b==null) 
+### Method parameters
 
-ü  NullpointerException
+* Formal vs Actual Parameters
+  * Formal Parameter (**Parameter**): **the header of a method** defines the parameters of that method. Placeholder
+  * Actual Parameter (**Argument**): supplied by a particular **method call** in a client program.
+  * Note: 
+    * the number of arguments must **equal** the number of parameters
+    * the type of each arguments must be **compatible** with the type of each corresponding parameter
+* Passing primitive types as parameters: passed by value/ by creating a new memory slot
 
-Method parameters
 
-ü  Formal vsActual Parameters
-
-   Formal--The header of a method defines the parametersof that method. Placeholder
-
-   Actual—supplied by a particular method call inclient program.
-
-ü  Passingprimitive types as parameters
-
-         Passedby value/ a new memory slot
-
-ü  Passing objectsas parameters
-
-Copy the address
-
- 
-
-Summary
+* Passing objectsas parameters: Copy the address
 
  
 
- 
+### Summary
 
- 
-
- 
-
- 
-
-課後作業：
-
-1，2，
