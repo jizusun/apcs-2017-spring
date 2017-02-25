@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: ..\images
+---
+
 ## Review of Chapter 1
 
 ### Operator:
@@ -59,6 +63,9 @@
 ### Object and class
 
 * **Object**: An object is a software bundle of related **state** and **behavior**.
+
+  ![object-illustration](../images/object-illustration.png)
+
 * **Class**:  Blueprint for implementing objects
   * An object is a single instance of the class
   * In Java, a variable that represents an object is called an **object reference**
@@ -68,7 +75,6 @@
 *    In class: 
 
      * **state**: data fields
-
      * **Behavior**: methods
 *    Combine data and method into a single unit class: **encapsulation**
 *    Benefit of encapsulation
