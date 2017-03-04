@@ -225,15 +225,14 @@ typora-root-url: images
 
 #### Downcasting
 
-`Student s =new GradStudent();`
+```
+Student s  = new GradStudent();
+GradStudent g = new GradStudent();
+int x = s.getID();
+int y = g.getID();
+```
 
-`GradStudent g=new GradStudent()`
-
-`int x=s.getID()`
-
-`int y =g.getID()`
-
-***ERROR!!!***
+***ERROR!!!!!***
 
 * WHY??
   * Student class does not have a getID() method 
