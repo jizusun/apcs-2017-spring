@@ -81,7 +81,7 @@ typora-root-url: images
 
 * specifically, a new class (**subclass**) is created from an existing class( **superclass**)
 
-  ![inheritance2](https://github.com/smilingsun/apcs-2017-spring/tree/master/images/inheritance2.PNG)
+  ![inheritance2](../../images/inheritance2.PNG)
 
   ![inheritance1](../../images/inheritance1.jpg)
 
@@ -217,6 +217,7 @@ typora-root-url: images
     * actual method is called **not** by the compiler.
     * the compiler determines if a method can be called (such is legal??),while the run-time environment determines if it will be called.
   * page139 Example2
+  * p152 8
 
 ---
 
@@ -242,6 +243,7 @@ typora-root-url: images
 * definition: Casting a **superclass** to a **subclass** type is called a **downcast**.
 * Note: `int x=(GradStudent)s.getID();` cause error!! 
   * dot operator has higher precedence than casting.
+* p152.7   p153.9
 
 
 ### type rules for polymorphic method calls
