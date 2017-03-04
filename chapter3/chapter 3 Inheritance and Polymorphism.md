@@ -2,6 +2,75 @@
 typora-root-url: images
 ---
 
+### review
+
+* **concept**
+
+  * class and object
+
+  * private\public\static
+
+    ```
+    //BankAccount.java
+    public class BankAccount{
+      public static void print(){
+        、、、
+      }
+    }
+
+    //main.java
+    BankAccount b1=new BankAccount();
+    b1.print();
+
+    ```
+
+    right or wrong????
+
+  * all parameter in java are passed by value.
+
+  * method overload
+
+    * two overloaded methods in the same class must have parameters with different name. ??
+    * two different constructors in a given class can have the same number of parameters. ??
+
+  * references 
+
+    * what is aliasing?
+    * p116.10  
+
+    ```
+    int a=2;
+    int b=a;
+
+    BankAccount b1=new BankAccount();
+    BankAccount b2=b1;
+    BankAccount b3=new BankAccount();
+    ```
+
+  * scope 
+
+    * p117.13   p125.23
+    * during execution of the method,the parameters are local to the method. 
+    * any changes made to the parameters will not affect the value of the arguments in the calling program. 
+    * when the method is exited,the local memory slots for parameters are eased.
+
+  * formal vs actual parameter
+
+    * ```
+      //BankAccount.java
+      public class BankAccount(){
+        public void print(int account,string password){
+          \\\
+        }
+      }
+
+      //main.java
+      BankAccount b1=new BankAccount();
+      b1.print(2222.00,"skdhsdjs",222);
+      ```
+
+      right or wrong?? why???
+
 ## chapter 3 Inheritance and Polymorphism
 
 #### Inheritance
@@ -10,9 +79,9 @@ typora-root-url: images
 
 * specifically, a new class (**subclass**) is created from an existing class( **superclass**)
 
-  ![inheritance2](../images/inheritance2.PNG)
+  ![inheritance2](../../images/inheritance2.PNG)
 
-  ![inheritance1](../images/inheritance1.jpg)
+  ![inheritance1](../../images/inheritance1.jpg)
 
 * Inheritance Hierarchy: "is- a" relationship/transitive/arrow/opposite is not true
 
