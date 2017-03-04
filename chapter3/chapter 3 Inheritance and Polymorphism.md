@@ -126,13 +126,15 @@ typora-root-url: images
     ###   constructors and `super`
 
     * **constructors are never inherited!**
+
     * if no constructors in subclass?
       * the superclass default constructor with no parameter is generated.
       * superclass only have a constructor with parameter,**error**.
+
     * a subclass method can be implemented with call the super method.
       * super()/super(type parameter).
 
-      * note : super is used in subclass constructor,must be used in **first line.**
+      * note : **in constructors**,super is used in subclass constructor,must be used in **first line.**
 
       * if no constructors is provided in the subclass,the compiler provides the following default constructors.
 
@@ -143,6 +145,8 @@ typora-root-url: images
         ```
 
       * p151.2 \3\4
+
+    * **coding**-----in other methods , we can use super.methodName()
 
 
 ---
@@ -213,7 +217,6 @@ typora-root-url: images
     * actual method is called **not** by the compiler.
     * the compiler determines if a method can be called (such is legal??),while the run-time environment determines if it will be called.
   * page139 Example2
-  * using super in a subclass -----**coding**
 
 ---
 
