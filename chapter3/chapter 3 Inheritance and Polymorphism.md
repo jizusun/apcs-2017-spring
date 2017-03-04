@@ -81,7 +81,7 @@ typora-root-url: images
 
 * specifically, a new class (**subclass**) is created from an existing class( **superclass**)
 
-  ![inheritance2](../../images/inheritance2.PNG)
+  ![inheritance2](https://github.com/smilingsun/apcs-2017-spring/tree/master/images/inheritance2.PNG)
 
   ![inheritance1](../../images/inheritance1.jpg)
 
