@@ -1,5 +1,5 @@
 ---
-typora-root-url: images
+typora-root-url: ../images
 ---
 
 ### review
@@ -81,9 +81,9 @@ typora-root-url: images
 
 * specifically, a new class (**subclass**) is created from an existing class( **superclass**)
 
-  ![inheritance2](../../images/inheritance2.PNG)
+  ![inheritance2](../images/inheritance2.PNG)
 
-  ![inheritance1](../../images/inheritance1.jpg)
+  ![inheritance1](../images/inheritance1.jpg)
 
 * Inheritance Hierarchy: "is- a" relationship/transitive/arrow/opposite is not true
 
@@ -153,7 +153,7 @@ typora-root-url: images
 
 ### declaring subclass objects
 
-![inheritance-student](../../images/inheritance-student.PNG)
+![inheritance-student](../images/inheritance-student.PNG)
 
 ​    **valid**
 
