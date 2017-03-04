@@ -153,11 +153,11 @@ typora-root-url: images
 
 ​	`student u=new UnderGrad();`
 
-* a GraderStudent is-a student; a UnderStudent is-a studet;
+* a GradStudent is-a student; a UnderStudent is-a studet;
 
-  `s.setGrade("pass"）;`
+  `s.getID();`
 
-  `g.setGrade("pass");`
+  `U.getID();`
 
 * superclass does not inherit from a subclass.
 
