@@ -49,10 +49,12 @@ typora-root-url: images
 
   * scope 
 
-    * p117.13   p125.23
-    * during execution of the method,the parameters are local to the method. 
-    * any changes made to the parameters will not affect the value of the arguments in the calling program. 
-    * when the method is exited,the local memory slots for parameters are eased.
+    * instance variable,static variable, and methods of a class belong to the class's scope.
+    * local variable:
+      * during execution of the method,the parameters are local to the method. 
+      * any changes made to the parameters will not affect the value of the arguments in the calling program. 
+      * when the method is exited,the local memory slots for parameters are eased.
+    * p114.8    p117.13   p125.23 
 
   * formal vs actual parameter
 
@@ -103,7 +105,9 @@ typora-root-url: images
     * objects of subclass contain memory for private instance variables,even though they cannot access them directly.
     * a subclass can invoke public accessor or mutator . 
 
-  * class on the same level in a hierarchy diagram do not inherit anything from each other.​
+  * class on the same level in a hierarchy diagram do not inherit anything from each other.
+
+  * p151.1
 
     ---
 
@@ -138,12 +142,14 @@ typora-root-url: images
         }
         ```
 
-        ​
+      * p151.2 \3\4
 
 
 ---
 
 ### declaring subclass objects
+
+![inheritance-student](../../images/inheritance-student.PNG)
 
 ​    **valid**
 
@@ -201,7 +207,7 @@ typora-root-url: images
 
   * overloaded:
     * select correct overloaded method at compile time by comparing **method signature**
-    * static binding,early binding
+    * static binding,**early binding**
   * overridden:
     * definition a method with same return type and signature(name and parameter types) in subclass.
     * actual method is called **not** by the compiler.
@@ -269,7 +275,7 @@ typora-root-url: images
   * every subclass need to override this method.
 * if a class contains any abstract methods,it must be declared an abstract class.
 
-`public abstract class AbstractClass{.......}`
+  `public abstract class AbstractClass{.......}`
 
 * if a subclass does not provide implementation code for all abstract methods,it must become an abstract class.
 
