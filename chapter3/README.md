@@ -2,67 +2,76 @@
 typora-copy-images-to: ..\images
 ---
 
-### Revision
+## Revision of Chapter 2
 
-* **ALWAYS** align with **Chapter Goals** in Barron textbook and [**AP Java Subset (PDF)**](https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-computer-science-a-java-subset.pdf)
+### Please Always ...      
 
-* **Concepts**
+* Always keep aligned with **Chapter Goals** in Barron textbook and [**AP Java Subset (PDF)**](https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-computer-science-a-java-subset.pdf)
 
-  * Objects and classes
+### Chapter Goals
+#### Objects and classes
 
-  * Keywords ``private``, ``public`` and  ``static``
+* state: variables / data
+* behavior: methods
+* **encapsulation**
 
-    ```java
-    // BankAccount.java
-    public class BankAccount
-    {
-      // variables here, either instance or static
-      // methods here, either instance or static
-      public static void print(){
-        // implementation here
-      }
-    }
+#### Keywords ``private``, ``public`` and  ``static``
+```java
+// BankAccount.java
+public class BankAccount
+{
+  // variables here, either instance or static
+  // methods here, either instance or static
+  public static void print(){
+    // method implementation here
+  }
+}
+// Main.java
+BankAccount b1 = new BankAccount();
+b1.print(); // right or wrong?
+```
 
-    // Main.java
-    BankAccount b1 = new BankAccount();
-    b1.print(); // right or wrong?
-    ```
+#### Methods
 
-  * All parameters in Java are passed by **value** (as opposed to the case in C++).
+*   Constructors(**default, with parameters**), accessors, mutators
 
+* Static methods
 
+* Method overloading
 
-*   Method overloading
+    * the **signature** of a method: the methods' name + a list of the parameter's types, e.g.
 
-    * the **signature** of a method
+      ```java
+      product(int)
+      product(double)
+      product(int, int)
+      ```
+
     * True or false? 
       * Two overloaded methods in the same class must have parameters with different name. 
       * Two different constructors in a given class can have the same number of parameters. 
 
-* References 
+#### References
 
-    * **aliasing**
-    * p116.10  
+* primitive data types <-> reference data types
 
-    ```java
-    int a = 2;
-    int b = a;
+* All parameters in Java are passed by **value** (as opposed to the case in C++).
 
-    BankAccount b1 = new BankAccount();
-    BankAccount b2 = b1;
-    BankAccount b3 = new BankAccount();
-    ```
+* **aliasing**: having two references for the same object
 
-* Scope 
+* p116.10  
 
-    * instance variable, static variable, and methods of a class belong to the class's scope.
-    * local variable:
-      * during execution of the method,the parameters are local to the method. 
-      * any changes made to the parameters will not affect the value of the arguments in the calling program. 
-      * when the method is exited,the local memory slots for parameters are eased.
-    * p114.8    p117.13   p125.23
+* Read the following code: 
 
-* **formal** vs **actual** parameter
+  ```java
+  int a = 2;
+  int b = a;
+  BankAccount b1 = new BankAccount();
+  BankAccount b2 = b1;
+  BankAccount b3 = new BankAccount();
+  ```
+
+* **Formal** vs **actual** parameter
 
   ```java
   //BankAccount.java
@@ -74,12 +83,24 @@ typora-copy-images-to: ..\images
   }
   //Main.java
   BankAccount b1=new BankAccount();
-  b1.print(2222.00,"skdhsdjs",222); // anything wrong
+  b1.print(2222.00,"skdhsdjs",222); // anything wrong?
   ```
 
-## chapter 3 Inheritance and Polymorphism
 
-#### Inheritance
+* instance variable, static variable, and methods of a class belong to the class's **scope**
+* local variable:
+  * during execution of the method, the parameters are local to the method. 
+  * Any changes made to the parameters will not affect the value of the arguments in the calling program. 
+  * when the method is exited,the local memory slots for parameters are eased.
+* p114.8    p117.13   p125.23
+
+
+
+
+
+## Chapter 3: Inheritance and Polymorphism
+
+### Inheritance
 
 * definition: defines a relationship between objects that share characteristics.
 
@@ -141,18 +162,15 @@ typora-copy-images-to: ..\images
       * note : **in constructors**,super is used in subclass constructor,must be used in **first line.**
 
       * if no constructors is provided in the subclass,the compiler provides the following default constructors.
-
-        ```
+```
         public SubClass(){
           super();
         }
-        ```
+```
 
       * p151.2 \3\4
 
     * **coding**-----in other methods , we can use super.methodName()
-
-
 ---
 
 ### declaring subclass objects
