@@ -1,77 +1,81 @@
 ---
-typora-root-url: ../images
+typora-copy-images-to: ..\images
 ---
 
-### review
+### Revision
 
-* **concept**
+* **ALWAYS** align with **Chapter Goals** in Barron textbook and [**AP Java Subset (PDF)**](https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-computer-science-a-java-subset.pdf)
 
-  * class and object
+* **Concepts**
 
-  * private\public\static
+  * Objects and classes
 
-    ```
-    //BankAccount.java
-    public class BankAccount{
+  * Keywords ``private``, ``public`` and  ``static``
+
+    ```java
+    // BankAccount.java
+    public class BankAccount
+    {
+      // variables here, either instance or static
+      // methods here, either instance or static
       public static void print(){
-        、、、
+        // implementation here
       }
     }
 
-    //main.java
-    BankAccount b1=new BankAccount();
-    b1.print();
-
+    // Main.java
+    BankAccount b1 = new BankAccount();
+    b1.print(); // right or wrong?
     ```
 
-    right or wrong????
+  * All parameters in Java are passed by **value** (as opposed to the case in C++).
 
-  * all parameter in java are passed by value.
 
-  * method overload
 
-    * two overloaded methods in the same class must have parameters with different name. ??
-    * two different constructors in a given class can have the same number of parameters. ??
+*   Method overloading
 
-  * references 
+    * the **signature** of a method
+    * True or false? 
+      * Two overloaded methods in the same class must have parameters with different name. 
+      * Two different constructors in a given class can have the same number of parameters. 
 
-    * what is aliasing?
+* References 
+
+    * **aliasing**
     * p116.10  
 
+    ```java
+    int a = 2;
+    int b = a;
+
+    BankAccount b1 = new BankAccount();
+    BankAccount b2 = b1;
+    BankAccount b3 = new BankAccount();
     ```
-    int a=2;
-    int b=a;
 
-    BankAccount b1=new BankAccount();
-    BankAccount b2=b1;
-    BankAccount b3=new BankAccount();
-    ```
+* Scope 
 
-  * scope 
-
-    * instance variable,static variable, and methods of a class belong to the class's scope.
+    * instance variable, static variable, and methods of a class belong to the class's scope.
     * local variable:
       * during execution of the method,the parameters are local to the method. 
       * any changes made to the parameters will not affect the value of the arguments in the calling program. 
       * when the method is exited,the local memory slots for parameters are eased.
-    * p114.8    p117.13   p125.23 
+    * p114.8    p117.13   p125.23
 
-  * formal vs actual parameter
+* **formal** vs **actual** parameter
 
-    * ```
-      //BankAccount.java
-      public class BankAccount(){
-        public void print(int account,string password){
-          \\\
-        }
-      }
-
-      //main.java
-      BankAccount b1=new BankAccount();
-      b1.print(2222.00,"skdhsdjs",222);
-      ```
-
-      right or wrong?? why???
+  ```java
+  //BankAccount.java
+  public class BankAccount()
+  {
+    public void print(int account,string password){
+      // TODO
+    }
+  }
+  //Main.java
+  BankAccount b1=new BankAccount();
+  b1.print(2222.00,"skdhsdjs",222); // anything wrong
+  ```
 
 ## chapter 3 Inheritance and Polymorphism
 
