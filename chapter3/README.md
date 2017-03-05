@@ -208,25 +208,25 @@ b1.print(); // right or wrong?
 
 ## Polymorphism
 
-* definition: a method has been overridden in at least one subclass. eg,computeGrade
+* Definition: a method has been overridden in at least one subclass. eg, ``computeGrade()``
 
-* it is the mechanism of selecting the appropriate method for a particular object.
+* It is the mechanism of selecting the appropriate method for a particular object.
 
-* method calls are always determined by **the type of actual object**,not the type of object reference.
+* Method calls are always determined by **the type of actual object**, not the type of object reference.
 
-  `s.computeGrade()`
+  ```java
+  s.computeGrade();
+  g.computeGrade();
+  u.computeGrade();
+  ```
 
-  `g.computeGrade()`
+* selection of the correct method occurs during **run of the program**.
 
-  `u.computeGrade()`
-
-  * selection of the correct method occurs during **run of the program**.
-
-  ##### Dynamic Binding(late Binding)
+### Dynamic Binding (late Binding)
 
 * definition: making a run-time decision about which instance method to call.
 
-* contrast overloaded && overridden
+* Comparison between **overloaded** and **overridden**
 
   * overloaded:
     * select correct overloaded method at compile time by comparing **method signature**
@@ -238,58 +238,61 @@ b1.print(); // right or wrong?
   * page139 Example2
   * p152 8
 
----
 
-### type compatibility
+### Type compatibility
 
 #### Downcasting
 
-```
+```java
 Student s  = new GradStudent();
 GradStudent g = new GradStudent();
-int x = s.getID();
-int y = g.getID();
+int x = s.getID(); // invalid
+int y = g.getID(); // ok
+int x = ((GradStudent) s).getID(); // finally valid, by casting s to the correct type
 ```
 
-***ERROR!!!!!***
-
 * WHY??
-  * Student class does not have a getID() method 
-  * at compile time,only nonprivate methods of Student class can appear to the right of the dot operator.
-* Resolve
-  * casting s to the correct type: `int x =((GradStudent)s).getID();`
-* definition: Casting a **superclass** to a **subclass** type is called a **downcast**.
-* Note: `int x=(GradStudent)s.getID();` cause error!! 
-  * dot operator has higher precedence than casting.
+  * ``Student`` class does not have a ``getID() ``method 
+  * at compile time,only non-private methods of ``Student`` class can appear to the right of the dot operator.
+
+* Definition: Casting a **superclass** to a **subclass** type is called a **downcast**.
+
+* Note: 
+
+  ```java
+  int x=(GradStudent)s.getID(); // cause error!! 
+  // dot operator has higher precedence than casting.
+  ```
+
 * p152.7   p153.9
 
 
-### type rules for polymorphic method calls
+#### Rules for polymorphic method calls
 
-`SuperClass a=new SubClass()`
+  ```java
+  SuperClass a = new SubClass();
+  a.method(b);
+  ```
 
-`a.method(b)`
-
-* type of a at compile time is SuperClass, at run time is SubClass.
+* type of a at compile time is ``SuperClass``, at run time is ``SubClass``.
 * at compile time ,method must be found in the class(SuperClass) of a,if not, u need an explicit cast.
 * for a polymorphism method,at run time the actual type of a is determined.
 * the type of b is checked at compile time.
 
----
 
-### The ClassCastException
+#### The ClassCastException
 
 * definition: a run-time exception thrown to cast an object to a class of which is not an instance.
 
-  `Student u =new UnderGrad()`
+  ```java
+  Student u =new UnderGrad();
+  System.out.println((string)u);   // ClassCastException
+  int x =((Gradstudent)u).getID();
+  ```
 
-  `System.out.println((string)u)`   ClassCastException
 
-  `int x =((Gradstudent)u).getID()`
 
----
-
-### ABSTRACT CLASS
+## Abstract Class
 
 * definition: an abstract class is a superclass that represents an abstract concept.And should not be instantiated.
 * abstract methods:`public abstract double area();`
@@ -309,53 +312,47 @@ int y = g.getID();
   * it is possible for an abstract class to have no abstracts methods.
   * an abstract class may or may not have constructors.
 
----
 
-### INTERFACES
+## Interfaces
 
 * definition: a collection of related methods whose headers are provided without implementation. All of the methods are both public and abstract. some examples.
 * a class  **implements** an interface need to implement **all the methods** in the interface.
 * if cannot implement all the method,the class must be declared abstract.
 
-```
-public interface FlyingObject{
+  ```java
+  public interface FlyingObject
+  {
+    void fly();
+    boolean is Flying();
+  }
+  ```
 
-void fly();
+  ```java
+  public class Bird implements FlyingObject
+  {
+    .....
+  }
+  ```
 
-boolean is Flying();
-
-}
-
-```
-
-```
-pulic class Bird implements FlyingObject{
-  .....
-}
-```
-
-```
-public class Mosqutio extends Insect implements FlyingObject{
-  .....
-}
-```
+  ```java
+  public class Mosqutio extends Insect implements FlyingObject
+  {
+    .....
+  }
+  ```
 
 * Note:
 
   * the extends clause must precede the implements clause.
 
-  * a class can have only  one superclass, but can implement any number of interfaces:
+  * a class can have only one super class, but can **implement any number of interfaces**:
 
+    ```java
+    public class SubClass extends SuperClass implements Interface1, Interface2,.......
     ```
-    public class SubClass extends SuperClass implements Interface1,Interface2,.......
-    ```
-
-    ​
 
 
----
-
-### Interface vs. Abstract class
+## Interface vs. Abstract class
 
 1. Use an abstract class for an object is application-specific but incomplete without its subclass.
 2. using an interface when its method are suitable for your program but could be equally applicable in variety of programs.
@@ -363,13 +360,11 @@ public class Mosqutio extends Insect implements FlyingObject{
 4. an interface cannot contain instance variables,whereas an abstract class can .
 5. it is not possible to create an instance of an interface object or an abstract class object.
 
----
-
-### summary
+## Summary
 
 * u can write subclass ,given any superclass.
-* design , create ,modify a class that ` implements ` an interface
-* super:both in writing constructors and calling methods of superclass.
+* design, create, modify a class that ` implements ` an interface
+* ``super.methodName()/super()``: both in writing constructors and calling methods of superclass.
 * understand polymorphism : when methods have been overridden in at least one subclass.
 * explain the difference between the following concepts:
   * an abstract class and an interface
