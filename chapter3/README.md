@@ -2,20 +2,20 @@
 typora-copy-images-to: ..\images
 ---
 
-## Revision of Chapter 2
+# Revision of Chapter 2
 
-### Please Always ...      
+## Please Always ...      
 
 * Always keep aligned with **Chapter Goals** in Barron textbook and [**AP Java Subset (PDF)**](https://secure-media.collegeboard.org/digitalServices/pdf/ap/ap-computer-science-a-java-subset.pdf)
 
-### Chapter Goals
-#### Objects and classes
+## Chapter Goals
+### Objects and classes
 
 * state: variables / data
 * behavior: methods
 * **encapsulation**
 
-#### Keywords ``private``, ``public`` and  ``static``
+### Keywords ``private``, ``public`` and  ``static``
 ```java
 // BankAccount.java
 public class BankAccount
@@ -31,7 +31,7 @@ BankAccount b1 = new BankAccount();
 b1.print(); // right or wrong?
 ```
 
-#### Methods
+### Methods
 
 *   Constructors(**default, with parameters**), accessors, mutators
 
@@ -51,7 +51,7 @@ b1.print(); // right or wrong?
       * Two overloaded methods in the same class must have parameters with different name. 
       * Two different constructors in a given class can have the same number of parameters. 
 
-#### References
+### References
 
 * primitive data types <-> reference data types
 
@@ -89,127 +89,124 @@ b1.print(); // right or wrong?
 
 * instance variable, static variable, and methods of a class belong to the class's **scope**
 * local variable:
-  * during execution of the method, the parameters are local to the method. 
+  * during execution of the method, the parameters are local to the method. b
   * Any changes made to the parameters will not affect the value of the arguments in the calling program. 
   * when the method is exited,the local memory slots for parameters are eased.
 * p114.8    p117.13   p125.23
 
+# Chapter 3: Inheritance and Polymorphism
 
+## Inheritance
 
+* Definition: defines a relationship between objects that share characteristics.
 
-
-## Chapter 3: Inheritance and Polymorphism
-
-### Inheritance
-
-* definition: defines a relationship between objects that share characteristics.
-
-* specifically, a new class (**subclass**) is created from an existing class( **superclass**)
+* Specifically, a new class (**subclass**) is created from an existing class (**superclass**)
 
   ![inheritance2](../images/inheritance2.PNG)
+  (Source: http://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html)
 
   ![inheritance1](../images/inheritance1.jpg)
 
-* Inheritance Hierarchy: "is- a" relationship/transitive/arrow/opposite is not true
+* Inheritance Hierarchy:
+
+  *  "is- a" relationship
+  *  transitive: denoted with arrow, opposite is not true
 
 * Benefit: code reuse/ subclass only need to focus on new code required.
 
-  ​
 
-  ---
+### Implementing Subclasses
 
-  ​
+* keyword: ``extends``
 
-  #### Implementing Subclasses
+  * Inheriting instance methods and variables:
 
-  * keyword: ``extends``
-
-  * inheriting instance methods and variables:
-
-    * Subclasses do not inherit the private instance variable or private methods of their superclass.
-    * objects of subclass contain memory for private instance variables,even though they cannot access them directly.
+    * Subclasses **do not inherit ** the private instance variable or private methods of their superclass.
+    * Objects of subclass contain memory for private instance variables, even though they cannot access them directly.
     * a subclass can invoke public accessor or mutator . 
 
-  * class on the same level in a hierarchy diagram do not inherit anything from each other.
+  * Class on the same level in a hierarchy diagram do not inherit anything from each other.
 
   * p151.1
 
-    ---
 
-    #### Method overriding
 
-  * definition: a method in  superclass is overridden in a subclass by definition a method with same return type and signature(name and parameter types)
+#### Method overriding
 
-  * partial overriding ：subclass method wants to do what superclass does,plus something extra.
+*   definition: a method in superclass is overridden in a subclass by definition a method with same return type and signature(name and the list of parameter types)
 
-    `super.computeGrade()`
+  * partial overriding ：subclass method wants to do what superclass does, plus something extra.
+
+    ``super.computeGrade()``
 
   * private methods cannot be overridden
 
-    ---
 
-    ###   constructors and `super`
+#### constructors and `super`
 
-    * **constructors are never inherited!**
+* **constructors are never inherited!**
 
-    * if no constructors in subclass?
-      * the superclass default constructor with no parameter is generated.
-      * superclass only have a constructor with parameter,**error**.
+* if no constructors in subclass?
+  * the superclass default constructor with no parameter is generated.
+  * superclass only have a constructor with parameter,**error**.
 
-    * a subclass method can be implemented with call the super method.
-      * super()/super(type parameter).
+* a subclass method can be implemented with calling the super method.
+  * ``super() / super(para1, para2, ...)``
 
-      * note : **in constructors**,super is used in subclass constructor,must be used in **first line.**
+  * note : **in constructors**, ``super()`` is used in subclass constructor,must be used in **first line.**
 
-      * if no constructors is provided in the subclass,the compiler provides the following default constructors.
-```
-        public SubClass(){
-          super();
-        }
-```
+  * if no constructors is provided in the subclass, the compiler provides the following default constructors.
 
-      * p151.2 \3\4
+    ```java
+    public SubClass()
+    {
+      super();
+    }
+    ```
 
-    * **coding**-----in other methods , we can use super.methodName()
----
+* p151.2 \3\4
 
-### declaring subclass objects
+* **coding**: in other methods , we can use ``super.methodName()``
+
+
+#### declaring subclass objects
 
 ![inheritance-student](../images/inheritance-student.PNG)
 
-​    **valid**
+* a ``GradStudent`` is-a ``Student``; an ``UnderGrad`` is-a ``Student``
 
-​	`student s =new Student();`
+* Superclass does not inherit from a subclass.
 
-​	`student g =new GradStudent();`
+  ```java
+  /* 
+    Superclass as the type of the object reference;
+    SubClass as the type of the actual object.
+  */
+  Student s = new Student();
+  Student g = new GradStudent();
+  Student u = new UnderGrad();
+  // GradStudent and UnderGrad both inherit the setGrade() from Student
+  s.setGrade("Pass"); // ok
+  g.setGrade("Pass"); // ok
+  u.setGrade("Pass"); // ok
+  // Only GradStudent has getID() method
+  g.getID(); // ok
+  s.getID(); // invalid
+  u.getID(); // invalid
+  ```
 
-​	`student u=new UnderGrad();`
 
-* a GradStudent is-a student; a UnderStudent is-a studet;
+* a ``Student`` is not necessarily a ``GradStudent`` nor an ``UnderStudent``
 
-  `s.getID();`
+  ```java
+  GradStudent g = new Student(); // invalid
+  UnderGrad u = new Student();  // invalid
+  ```
 
-  `U.getID();`
 
-* superclass does not inherit from a subclass.
 
-  `g.setGrade("Pass");`
 
-  `u.setGrade("pass")`
-
-* GradStudent and UnderStudent both inherit the setGrade() from Student.
-
-**Invalid**
-
-`GradStudent g=new Student()`
-
-`UnderGrad u=new Student()`
-
-* a student is not necessarily a GradStudent nor an UnderStudent
-
-----
-
-### polymorphism
+## Polymorphism
 
 * definition: a method has been overridden in at least one subclass. eg,computeGrade
 
