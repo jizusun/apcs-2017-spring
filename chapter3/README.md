@@ -14,23 +14,41 @@ typora-root-url: ../images
     //BankAccount.java
     public class BankAccount{
       public static void print(){
-        、、、
+        
       }
     }
 
     //main.java
     BankAccount b1=new BankAccount();
     b1.print();
-
     ```
 
     right or wrong????
 
   * all parameter in java are passed by value.
 
+    ```
+    BankAccount b1 = new BankAccount();
+    BankAccount b2 = b1;
+    ```
+
   * method overload
 
     * two overloaded methods in the same class must have parameters with different name. ??
+
+      ```
+      public class BankAccount{
+        publc void print(String name,int id){
+          
+        }
+        public void print(String Name,int ID ){
+          
+        }
+      }
+      ```
+
+      ​
+
     * two different constructors in a given class can have the same number of parameters. ??
 
   * references 
@@ -62,7 +80,7 @@ typora-root-url: ../images
       //BankAccount.java
       public class BankAccount(){
         public void print(int account,string password){
-          \\\
+          
         }
       }
 
@@ -81,6 +99,8 @@ typora-root-url: ../images
 
 * specifically, a new class (**subclass**) is created from an existing class( **superclass**)
 
+* example : dog---animal 
+
   ![inheritance2](../images/inheritance2.PNG)
 
   ![inheritance1](../images/inheritance1.jpg)
@@ -88,6 +108,8 @@ typora-root-url: ../images
 * Inheritance Hierarchy: "is- a" relationship/transitive/arrow/opposite is not true
 
 * Benefit: code reuse/ subclass only need to focus on new code required.
+
+* single inheritance
 
   ​
 
