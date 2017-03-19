@@ -35,18 +35,18 @@ b1.print(); // right or wrong?
 
 *   Constructors(**default, with parameters**), accessors, mutators
 
-*   Static methods
+* Static methods
 
 * Method overloading
-*  The **signature** of a method: the methods' name + a list of the parameter's types, e.g.
+* The **signature** of a method: the methods' name + a list of the parameter's types, e.g.
 
-      ```java
+      ​```java
       product(int)
       product(double)
       product(int, int)
-      ```
-    
-    * True or false? 
+      ​```
+
+  * True or false? 
       * Two overloaded methods in the same class must have parameters with different name. 
       * Two different constructors in a given class can have the same number of parameters. 
 
@@ -60,7 +60,7 @@ b1.print(); // right or wrong?
 
 * p116.10  
 
-*  Read the following code: 
+* Read the following code: 
 
   ```java
   int a = 2;
@@ -110,7 +110,7 @@ b1.print(); // right or wrong?
 
 * Inheritance Hierarchy:
 
-*    "is- a" relationship
+* "is-a" relationship
   * transitive: denoted with arrow, opposite is not true
 
 * Benefit: code reuse/ subclass only need to focus on new code required.
@@ -136,7 +136,7 @@ b1.print(); // right or wrong?
 
 *   definition: a method in superclass is overridden in a subclass by definition a method with same return type and signature(name and the list of parameter types)
 
-  * partial overriding ï¼šsubclass method wants to do what superclass does, plus something extra.
+  * partial overriding: subclass method wants to do what superclass does, plus something extra.
 
     ``super.computeGrade()``
 
