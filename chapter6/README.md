@@ -1,8 +1,56 @@
 # Chapter 6: Arrays and Array Lists 
 
+
+
+## Agenda
+
+* You don't know ``Hello World`` in Java!
+* Mini Lab: April Fool's Day 2017 Gift
+* Arrays Essentials
+* Lab: Pictures Lab
+
+## Introduction
+
+* **Bonus**: ``Ctrl + Shift + L`` in ``Eclipse``, show all keyboard shortcuts
+
+* You **don't know** Hello World in Java!
+
+  ```java
+  public class Demo {
+      public static void main(String[] args) {
+        // What's the hell does it mean? ---> String[] args
+        // http://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
+        System.out.println("Hello World!"); 
+      }
+    }
+  ```
+
+* ``AprilFoolsDay2017Gift`` Program
+
+  ```java
+  /**
+   * A gift ...
+   * 
+   * Special for April Fool's Day in 2017
+   * Special for APCS 2017
+   * Special for Y-O-U
+   * 
+   * This program pretends to "format" your hard-disk, according to the command line arguments
+   * 
+   * If you provide "C", then prompt "Partition C is formatted" 
+   * If you provide "C D", then prompt "Partition C and D are formatted"
+   * If you provide nothing or anything else ...
+   * then prompt "Nothing provided or recognized, all partitions are formatted"
+   * 
+   */
+  public class AprilFoolsDay2017Gift {
+    // See source code
+  }
+  ```
+
 ## One-Dimensional Arrays
 
-* **Definition**:  a data structure to implement a list object, where the element in the list are of **the same type**.
+* Definition**:  a data structure to implement a list object, where the element in the list are of **the same type**.
 
   * for an array of N elements in java, index values ( **subscripts**) from **0 to N-1**
   * ArrayIndexOutOfBoundsException is thrown: subscript is negative or subscript is k where k>=N
@@ -20,9 +68,8 @@
     double data[] = new double[25];
     double data[];   data= new double[25];  data =new double[40];//memory allocated for previous data array is recycled.
     ```
-  ```
 
-  *   zero for the primitive numeric type / false for boolean variable / null for object reference
+* zero for the primitive numeric type / false for boolean variable / null for object reference
 
   * initializer list---when small arrays whose values are known
 
@@ -35,23 +82,26 @@
     or
 
     int[] coins={1,2,3}
+    ```
   ```
 
-  * **length of array**:*names.length*  vs **length of String objects** :*objectName.length()*
+  ```
+
+* **length of array**:*names.length*  vs **length of String objects** :*objectName.length()*
 
     ```java
     String s = "abc"; s.length();//String object length
     int[] a = new int[6]; a.length;//Array length
     ```
 
-  * **Traversing an Array**
+* **Traversing an Array**
 
     * for-each loop: without replacing or removing any elements  
       * practice: return the number of even integer in array arr of integers.
     * for loop: access the index of any element ,to replace or remove elements, or to access just some of the elements.
       * practice: change each even-indexed element in array arr to 0.
 
-  * **Arrays as Parameters**
+* **Arrays as Parameters**
 
     * arrays are treated as *object*, so passing a parameter means passing its *object reference*.
     * Q: So,the element of actual array can be modified????
@@ -60,7 +110,7 @@
       * practice2: add 3 to each element of array b
       * practice 3: 
 
-  * Array variable in a class
+* Array variable in a class
 
   * Array of Class object
 
