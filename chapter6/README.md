@@ -56,7 +56,6 @@
 ### What's New 
 
 * A data structure (container) to implement a list object, where the element in the list are of **the same type**.
-* Once initialized, the length(aka. the size) is **fixed**
 * Each item in the array is call an **element**
 * For an array of N elements in Java
   * index values (also called **subscripts**) range from ``0`` to ``N-1``
@@ -66,14 +65,13 @@
 
 *   Array is an **object** , the keyword **new** can be used for its creation.
 
-* the **size ** of an array remains fixed once it has been created.
+* Once initialized, the length(aka. the size) is **fixed**
 
   ```java
   double arr[];    // declared
   arr= new double[25];  // Initialized, but what's the default value?
   arr =new double[40];  // memory allocated for previous data array is recycled.
-  arr[0] = 3.14;  // working
-  arr[100] = 0.14; // ArrayIndexOutOfBoundsException !!
+
   // declare and initialize at the same time
   double[] data = new double[25];
   double data[] = new double[25]; // also works
@@ -87,91 +85,108 @@
 
 * Initializer list
 
-  * when small arrays whose values are known
-
-  * must be used in the same line of array declaration
+  * when small-sized arrays whose values are known
+  * must be used in the same line of array declaration 
 
   ```java
+  // initialize with your own values
   int[] coins = new int[3];
   coins[0] = 1;
   coins[1] = 2;
   coins[2] = 3;
+  arr[100] = 10000; // ArrayIndexOutOfBoundsException 
   // or this way
   int[] coins = {1,2,3};
   ```
 
-* **length of array**:*names.length*  vs **length of String objects** :*objectName.length()*
+* get the **length** of array: ``arr.length``
 
     ```java
-    String s = "abc"; s.length();//String object length
-    int[] a = new int[6]; a.length;//Array length
+    String s = "abc"; 
+    s.length(); //String object length
+    int[] a = new int[6]; 
+    a.length; //Array length
     ```
 
 * **Traversing an Array**
 
-    * for-each loop: without replacing or removing any elements  
-      * practice: return the number of even integer in array arr of integers.
-    * for loop: access the index of any element ,to replace or remove elements, or to access just some of the elements.
-      * practice: change each even-indexed element in array arr to 0.
+    * ``for-each`` loop: not for replacing or removing any elements  
 
-* **Arrays as Parameters**
+    * ``for`` loop: one-for-all 
 
-    * arrays are treated as *object*, so passing a parameter means passing its *object reference*.
-    * Q: So,the element of actual array can be modified????
-    * **coding**
-      * practice1: return index of smallest element in array arr of integer
-      * practice2: add 3 to each element of array b
-      * practice 3: 
 
-* Array variable in a class
+### Arrays as Parameters
 
-  * Array of Class object
+* Arrays are treated as *Object*, so passing a parameter means passing its *object reference*.
+* **Ahhhhh! Dangerous!!** You can modify the original array passed in! 
 
-  * **analyzing array algorithms**
+### Array Variable in a Class
 
-    ```java
-    public static int countNegs(int[] arr){
-      int count=0;
-      for(int num: arr){
-        if(num<0){
-          count++;
-        }
-      }
-      return count;
+### Array of Class Object
+
+### Analyzing Array Algorithms
+
+```java
+public static int countNegs(int[] arr){
+  int count=0;
+  for(int num: arr){
+    if(num<0){
+      count++;
     }
-    ```
+  }
+  return count;
+}
+```
 
-    ```java
-    {
-    /** 
-    arr[0]....arr[n-1] contain integers sorted in increasing order
-    num need to be inserted in its correct position
-    n is arr.length
-    **/
-    //find insertion positioin
-    int i =0;
-    while (i<n && num>arr[i]){
-      i++;
-    }
-    for(int j=n;j>=i+1;j--){
-      arr[j]=arr[j-1];
-      //insert num in i-th slot and update n
-      arr[i]=num;
-      n++;
-    }
-    }
-    ```
+```java
+{
+  /** 
+  arr[0]....arr[n-1] contain integers sorted in increasing order
+  num need to be inserted in its correct position
+  n is arr.length
+  **/
+  //find insertion positioin
+  int i =0;
+  while (i<n && num>arr[i]){
+    i++;
+  }
+  for(int j=n;j>=i+1;j--){
+    arr[j]=arr[j-1];
+    //insert num in i-th slot and update n
+    arr[i]=num;
+    n++;
+  }
+}
+```
 
-    ​
+* best---when ??/  worst---when ??
+* so ,**insertion or deletion of an element in an ordered list is inefficient.**
 
-    * best---when ??/  worst---when ??
-    * so ,**insertion or deletion of an element in an ordered list is inefficient.**
 
-    ---
 
-    ​
+## Two-dimensional Arrays
 
-## Array List
+A two-dimensional array (matrix) is often the data structure of choice for theater seats,mazes.
+
+### Declarations
+
+```java
+int[][] table;
+double[][] matrix = new double[3][4]; //3*4,each element has value 0.0
+String[][] str = new String[3][5]; //3*5,each element is null
+int[][] mat = { {1,2,3},      //row0
+			    {4,5,6} };    //row1
+```
+### Matrix as Array of Row Arrays
+
+### Processing a Two-Dimensional Array
+* row-column(access ,modify , replacement)
+* for-each (access,modify, cannot replacement)
+* row-by-row(access ,modify , replacement)
+
+
+
+## ArrayList
 
 * an ArrayList is an alternative way of storing a list of object.
 
@@ -183,62 +198,31 @@
 
   * do insertion or deletion with just a single statement.![捕获](B:\pangpang\AP\chapter4\捕获.PNG)
 
-  * **Collections and generics**
 
-    * the collection classes are generic ,with the parameter, List<E> and ArrayList<E> contain elements of type E.
-    * EXAMPLE: private ArrayList<Clown> clowns;
+### Collections and generics**
 
-  * Auto-Boxing and Unboxing
+* the collection classes are generic ,with the parameter, List<E> and ArrayList<E> contain elements of type E.
+* EXAMPLE: private ArrayList<Clown> clowns;
 
-    * There are no primitive types in collections classes. 
+### Auto-Boxing and Unboxing
 
-    * An ArrayList must contain objects not types like double and int.
+* There are no primitive types in collections classes. 
 
-    * Auto-Boxing: automatic wrapping of primitive type in their wrapper class.
+* An ArrayList must contain objects not types like double and int.
 
-    * Unboxing: automatic conversion of a wrapper class to its corresponding primitive type.
+* Auto-Boxing: automatic wrapping of primitive type in their wrapper class.
 
-    * so, choose array or ArrayList?? when your data is all primitive type
+* Unboxing: automatic conversion of a wrapper class to its corresponding primitive type.
 
-      ---
+* so, choose array or ArrayList?? when your data is all primitive type
 
-      ### The List<E> INTERFACE
+### The List<E> INTERFACE
 
-    In  a list ,duplicate elements are allowed.
+In  a list ,duplicate elements are allowed.
 
-  * the methods of List<E>
+*   the methods of List<E>, see the p243.
 
-    see the p243.
-
-  * notice :
+*   notice :
 
     * get remove set   if **index<0||index>=size** IndexOutOfBoundsException
     * add  **index<0||index>size**
-
-
-## Two-dimensional Arrays
-
-A two-dimensional array(matrix) is often the data structure of choice for theater seats,mazes.
-
-*   declarations
-
-    ````java
-    int[][] table;
-    double[][] matrix =new double[3][4]//3*4,each element has value 0.0
-    String[][] str = new String[3][5]//3*5,each element is null
-    int[][] mat={{1,2,3},//row0
-    			{4,,5,6}};//row1
-    ````
-
-
-```java
-1 1 1 1
-2 2 2 2
-3 3 3 3
-4 4 4 4// SUM()   for/for-each
-​````
-
-* row-column(access ,modify , replacement)
-* for-each (access,modify, cannot replacement)
-* row-by-row(access ,modify , replacement)
-```
