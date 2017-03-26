@@ -30,18 +30,21 @@ public class AprilFoolsDay2017Gift {
 		/*
 		 * iterate over an array
 		 */
-		for(String s: args){
+		/*for(String s: args){
 			System.out.println(s);
-		}
+		}*/
 		/*
 		 * Bonus: simplest way to inspect elements of arrays
 		 * See more static methods of Arrays here:
 		 * https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html
 		 */
-		System.out.println(Arrays.toString(args));
+//		System.out.println(Arrays.toString(args));
 		
-		String[] strArr = new String[2];
-		System.out.println(strArr[0]);
+		// Explore the index of array ...
+		
+		int[] arr; // = new int[2];
+		System.out.println(arr[0]);
+		
 	}
 
 }

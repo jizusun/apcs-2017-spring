@@ -2,18 +2,18 @@
 
 
 
-## Agenda
+## Topics
 
 * You don't know ``Hello World`` in Java!
-* Mini Lab: April Fool's Day 2017 Gift
+* Mini Lab: April Fool's Day 2017 Gift (For one-dimensional arrays)
 * Arrays Essentials
-* Lab: Pictures Lab
+* Lab: Pictures Lab (For two-dimensional arrays)
 
 ## Introduction
 
 * **Bonus**: ``Ctrl + Shift + L`` in ``Eclipse``, show all keyboard shortcuts
 
-* You **don't know** Hello World in Java!
+* You **don't know** ``Hello World`` in Java!
 
   ```java
   public class Demo {
@@ -50,41 +50,54 @@
 
 ## One-Dimensional Arrays
 
-* Definition**:  a data structure to implement a list object, where the element in the list are of **the same type**.
+![objects-tenElementArray](../images/objects-tenElementArray.gif)
+(Source: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 
-  * for an array of N elements in java, index values ( **subscripts**) from **0 to N-1**
-  * ArrayIndexOutOfBoundsException is thrown: subscript is negative or subscript is k where k>=N
+### What's New 
 
-* **Initialization**
+* A data structure (container) to implement a list object, where the element in the list are of **the same type**.
+* Once initialized, the length(aka. the size) is **fixed**
+* Each item in the array is call an **element**
+* For an array of N elements in Java
+  * index values (also called **subscripts**) range from ``0`` to ``N-1``
+  * ``ArrayIndexOutOfBoundsException`` is thrown, when subscript is negative or subscript is ``k`` where ``k >= N ``
 
-  * array is an **object** , the keyword **new** can be used in its creation.
+### **Declare, Initialize, and Use**
 
-  * the **size ** of an array remains fixed once it has been created.
+*   Array is an **object** , the keyword **new** can be used for its creation.
 
-  * example:
+* the **size ** of an array remains fixed once it has been created.
 
-    ```java
-    double[] data = new double[25];
-    double data[] = new double[25];
-    double data[];   data= new double[25];  data =new double[40];//memory allocated for previous data array is recycled.
-    ```
-
-* zero for the primitive numeric type / false for boolean variable / null for object reference
-
-  * initializer list---when small arrays whose values are known
-
-  * ```java
-    int[] coins = new int[3];
-    coins[0] = 1;
-    coins[1] = 2;
-    coins[2] = 3;
-
-    or
-
-    int[] coins={1,2,3}
-    ```
+  ```java
+  double arr[];    // declared
+  arr= new double[25];  // Initialized, but what's the default value?
+  arr =new double[40];  // memory allocated for previous data array is recycled.
+  arr[0] = 3.14;  // working
+  arr[100] = 0.14; // ArrayIndexOutOfBoundsException !!
+  // declare and initialize at the same time
+  double[] data = new double[25];
+  double data[] = new double[25]; // also works
   ```
 
+* Default value when initialized:
+
+  * ``0`` for the primitive numeric data types, e.g. ``int``, ``double``
+  * ``false`` for ``Boolean`` variables
+  * ``null`` for object references
+
+* Initializer list
+
+  * when small arrays whose values are known
+
+  * must be used in the same line of array declaration
+
+  ```java
+  int[] coins = new int[3];
+  coins[0] = 1;
+  coins[1] = 2;
+  coins[2] = 3;
+  // or this way
+  int[] coins = {1,2,3};
   ```
 
 * **length of array**:*names.length*  vs **length of String objects** :*objectName.length()*
@@ -158,7 +171,7 @@
 
     ​
 
-#### ARRAY LISTS
+## Array List
 
 * an ArrayList is an alternative way of storing a list of object.
 
@@ -202,13 +215,12 @@
     * get remove set   if **index<0||index>=size** IndexOutOfBoundsException
     * add  **index<0||index>size**
 
-    ---
 
-    #### TWO-DIMENSIONAL ARRAYS
+## Two-dimensional Arrays
 
-    A two-dimensional array(matrix) is often the data structure of choice for theater seats,mazes.
+A two-dimensional array(matrix) is often the data structure of choice for theater seats,mazes.
 
-  * declarations
+*   declarations
 
     ````java
     int[][] table;
