@@ -1,0 +1,12 @@
+package scope;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scope s = new Scope(4,2);
+		s.product();
+		s.divide(15, 5);
+	}
+
+}

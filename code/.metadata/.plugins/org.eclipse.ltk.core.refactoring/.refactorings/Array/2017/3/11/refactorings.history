@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;array.ManyDeckRun.java&apos; to &apos;ManyDeckMain.java&apos;&#x0D;&#x0A;- Original project: &apos;Array&apos;&#x0D;&#x0A;- Original element: &apos;array.ManyDeckRun.java&apos;&#x0D;&#x0A;- Renamed element: &apos;array.ManyDeckMain.java&apos;" description="Rename compilation unit &apos;ManyDeckRun.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;array{ManyDeckRun.java" name="ManyDeckMain.java" references="false" stamp="1489848703781" version="1.0"/>
+</session>

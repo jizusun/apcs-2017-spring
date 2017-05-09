@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;stringPackage.String.java&apos; to &apos;TestEqual.java&apos;&#x0D;&#x0A;- Original project: &apos;wrapperClass&apos;&#x0D;&#x0A;- Original element: &apos;stringPackage.String.java&apos;&#x0D;&#x0A;- Renamed element: &apos;stringPackage.TestEqual.java&apos;" description="Rename compilation unit &apos;String.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;stringPackage{String.java" name="TestEqual.java" references="false" stamp="1489123538793" version="1.0"/>
+</session>

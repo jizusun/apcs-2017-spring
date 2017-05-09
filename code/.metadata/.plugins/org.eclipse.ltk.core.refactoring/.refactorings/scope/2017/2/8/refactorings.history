@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;scope.Scopoe.java&apos; to &apos;Scope.java&apos;&#x0D;&#x0A;- Original project: &apos;scope&apos;&#x0D;&#x0A;- Original element: &apos;scope.Scopoe.java&apos;&#x0D;&#x0A;- Renamed element: &apos;scope.Scope.java&apos;" description="Rename compilation unit &apos;Scopoe.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;scope{Scopoe.java" name="Scope.java" references="false" stamp="1487864436601" version="1.0"/>
+</session>

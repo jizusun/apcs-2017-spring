@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;SuperClass.java&apos; to &apos;inheritance/src/inheritance&apos;&#x0D;&#x0A;- Original project: &apos;Shape&apos;&#x0D;&#x0A;- Destination element: &apos;inheritance/src/inheritance&apos;&#x0D;&#x0A;- Original element: &apos;shape.SuperClass.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=inheritance/src&lt;inheritance" element1="/src&lt;shape{SuperClass.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1489505020273" units="1" version="1.0"/>
+</session>

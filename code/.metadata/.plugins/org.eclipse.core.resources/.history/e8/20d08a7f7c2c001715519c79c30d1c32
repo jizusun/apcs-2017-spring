@@ -1,0 +1,24 @@
+package scope;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scope s = new Scope(4,2);
+		s.print(s);
+		s.product();
+		s.product(4,5);
+		s.divide(15, 5);
+		
+		String a="hahhaha";
+		char []c=a.toCharArray();
+		System.out.println(c);
+		for(int i=0;i<c.length;i++){
+			System.out.println(c[i]);
+		}
+		String m=c.toString();
+		System.out.println(m);
+		
+	}
+
+}
